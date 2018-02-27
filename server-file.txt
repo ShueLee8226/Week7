@@ -1,0 +1,28 @@
+#!/bin/bash
+
+clear
+echo "let view unit service"
+systemctl --type=service | less
+echo "let check one of the unit service"
+echo "for example, the cups.service"
+echo "let check the status of the cups.service"
+systemctl status cups.service
+
+echo "now stop the cups.service"
+systemctl stop cups.service
+systemctl status cups.service
+echo "as you can see the cups.service is now inactive"
+echo "to make it active again we have to start it"
+systemctl start cups.service
+systemctl status cups.service
+
+clear
+echo "to unload a service is just disble it"
+echo "like using the disable command"
+systemctl disable cups.service
+systemctl status cups.service
+echo "Now you see that is have been disable"
+echo "To enable again just used enable command"
+systemctl enable cups.service
+systemctl status cups.service
+echo "as you can see it's have been enable"
